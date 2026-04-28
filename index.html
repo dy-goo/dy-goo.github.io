@@ -62,7 +62,7 @@
   .nav-logo {
     font-family: var(--mono);
     font-size: 13px;
-    color: var(--accent);
+    color: var(--accent2);
     letter-spacing: .08em;
     text-decoration: none;
   }
@@ -107,7 +107,7 @@
   .hero-tag {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--accent);
+    color: var(--accent2);
     letter-spacing: .2em;
     text-transform: uppercase;
     margin-bottom: 24px;
@@ -121,7 +121,7 @@
     display: inline-block;
     width: 32px;
     height: 1px;
-    background: var(--accent);
+    background: var(--accent2);
   }
 
   h1 {
@@ -201,7 +201,7 @@
     position: absolute;
     top: -1px; left: 32px; right: 32px;
     height: 2px;
-    background: var(--accent);
+    background: var(--accent2);
   }
 
   .card-label {
@@ -244,7 +244,7 @@
   .section-num {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--accent);
+    color: var(--accent2);
     letter-spacing: .1em;
   }
 
@@ -268,12 +268,12 @@
     transition: border-color .2s;
   }
 
-  .skill-block:hover { border-color: var(--accent); }
+  .skill-block:hover { border-color: var(--accent2); }
 
   .skill-block-label {
     font-family: var(--mono);
     font-size: 10px;
-    color: var(--accent);
+    color: var(--accent2);
     letter-spacing: .15em;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -295,9 +295,9 @@
   }
 
   .tag:hover, .tag.hot {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(232,255,71,.05);
+    border-color: var(--accent2);
+    color: var(--accent2);
+    background: rgba(71,197,255,.05);
   }
 
   /* ── EXPERIENCE ── */
@@ -315,7 +315,7 @@
   }
 
   .exp-item:hover { border-color: var(--border); }
-  .exp-item:hover .exp-title { color: var(--accent); }
+  .exp-item:hover .exp-title { color: var(--accent2); }
 
   .exp-meta { padding-top: 4px; }
 
@@ -372,7 +372,7 @@
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--accent);
+    color: var(--accent2);
     font-size: 11px;
   }
 
@@ -387,16 +387,16 @@
     font-family: var(--mono);
     font-size: 10px;
     padding: 4px 10px;
-    background: rgba(232,255,71,.08);
-    border: 1px solid rgba(232,255,71,.25);
-    color: var(--accent);
+    background: rgba(71,197,255,.08);
+    border: 1px solid rgba(71,197,255,.25);
+    color: var(--accent2);
     letter-spacing: .05em;
   }
 
   /* ── PROJECTS ── */
   .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2px;
   }
 
@@ -404,9 +404,10 @@
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
     transition: border-color .2s;
     text-decoration: none;
     color: inherit;
@@ -416,8 +417,8 @@
 
   .project-top {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .project-name {
@@ -427,14 +428,15 @@
   }
 
   .project-arrow {
-    font-size: 18px;
-    color: var(--muted);
-    transition: color .2s, transform .2s;
+    display: none;
   }
 
-  .project-card:hover .project-arrow {
+  .project-period {
+    font-family: var(--mono);
+    font-size: 11px;
     color: var(--accent2);
-    transform: translate(3px, -3px);
+    letter-spacing: .05em;
+    margin-top: 2px;
   }
 
   .project-desc {
@@ -442,6 +444,12 @@
     color: var(--muted);
     line-height: 1.7;
     flex: 1;
+  }
+
+  .project-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .project-stack {
@@ -461,30 +469,55 @@
   /* ── CONTACT ── */
   #contact {
     border-top: 1px solid var(--border);
-    padding: 80px 48px;
+    padding: 60px 48px;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+  }
+
+  .contact-copy {
+    margin-bottom: 40px;
+  }
+
+  .contact-copy-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent2);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
     align-items: center;
+    gap: 10px;
   }
 
-  .contact-big {
+  .contact-copy-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent2);
+  }
+
+  .contact-copy-text {
     font-family: var(--serif);
-    font-size: clamp(36px, 5vw, 60px);
-    line-height: 1.1;
+    font-size: 20px;
+    line-height: 1.35;
+    color: var(--text);
+    max-width: 700px;
   }
 
-  .contact-big em { font-style: italic; color: var(--accent); }
+  .contact-copy-text em {
+    font-style: italic;
+    color: var(--accent2);
+  }
 
-  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+  .contact-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 
   .contact-link {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 24px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 28px 32px;
     border: 1px solid var(--border);
     text-decoration: none;
     color: var(--text);
@@ -493,12 +526,11 @@
   }
 
   .contact-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    padding-left: 32px;
+    border-color: var(--accent2);
+    color: var(--accent2);
   }
 
-  .contact-link-label { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+  .contact-link-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .12em; }
 
   /* ── FOOTER ── */
   footer {
@@ -566,7 +598,7 @@
 <section id="hero">
   <div class="hero-left">
     <div class="hero-tag">Full-Stack Engineer · 7년차</div>
-    <h1><em>구동연</em></h1>
+    <h1>구동연</h1>
     <p class="hero-desc">
       SI 현장의 경험을 바탕으로 새로운 기술을 두려워하지 않고<br>
       끝까지 프로젝트를 완료합니다.<br><br>
@@ -583,7 +615,7 @@
       <div class="card-label">// quick facts</div>
       <div class="stat-row">
         <span class="stat-label">경력</span>
-        <span class="stat-value accent">7년차</span>
+        <span class="stat-value">7년차</span>
       </div>
       <div class="stat-row">
         <span class="stat-label">주력 스택</span>
@@ -591,7 +623,7 @@
       </div>
       <div class="stat-row">
         <span class="stat-label">경험 분야</span>
-        <span class="stat-value">소셜 미디어 · 뷰티 · CRM · 공공</span>
+        <span class="stat-value">소셜 미디어 · 뷰티 플랫폼· 인사관리 · 공공</span>
       </div>
       <div class="stat-row">
         <span class="stat-label">학력</span>
@@ -625,6 +657,8 @@
         <span class="tag hot">MySQL</span>
         <span class="tag hot">Oracle</span>
         <span class="tag hot">PostgreSQL</span>
+        <span class="tag hot">Github</span>
+        <span class="tag hot">Jenkins</span>
       </div>
     </div>
     <div class="skill-block">
@@ -635,9 +669,9 @@
         <span class="tag">Spring JPA</span>
         <span class="tag">MS-SQL</span>
         <span class="tag">Tibero</span>
-        <span class="tag">ASP.NET</span>
         <span class="tag">Vuetify</span>
         <span class="tag">jQuery</span>
+        <span class="tag">Nexus</span>
       </div>
     </div>
     <div class="skill-block">
@@ -645,8 +679,9 @@
       <div class="skill-tags">
         <span class="tag">TypeScript</span>
         <span class="tag">React Native</span>
-        <span class="tag">Node.js</span>
+        <span class="tag">Python</span>
         <span class="tag">WebSocket</span>
+        <span class="tag">ADsP</span>
       </div>
     </div>
   </div>
@@ -670,7 +705,7 @@
       </div>
       <div>
         <div class="exp-title">Web Developer</div>
-        <div class="exp-desc">소셜 커뮤니티 개발, ERP 구축, 리워드 앱 등 다양한 도메인 프로젝트 진행</div>
+        <div class="exp-desc">소셜 커뮤니티 개발, ERP, 리워드 앱 등 다양한 도메인 프로젝트 진행</div>
         <ul class="exp-bullets">
           <li>ERP, SNS, 리워드 앱 및 관리자 사이트 등 다양한 도메인 프로젝트 참여</li>
           <li>GitLab 기반 형상관리 및 브랜치 관리, Jenkins 배포 환경 운영 경험</li>
@@ -692,7 +727,7 @@
         <ul class="exp-bullets">
           <li>공공기관 프로젝트와 기업 대상의 인사관리 프로그램을 개발 및 유지보수</li>
           <li>소셜 로그인 개발, 각종 통계, 재정지표 개발</li>
-          <li>고객사별 인사관리 시스템의 근태/휴가관리, 조직관리 기능  요구사항에 대한 수정 및 추가개발</li>
+          <li>고객사별 인사관리 시스템의 근태/휴가관리, 조직관리 기능 요구사항에 대한 수정 및 추가개발</li>
         </ul>
       </div>
     </div>
@@ -711,126 +746,214 @@
   <div class="projects-grid">
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">현대백화점 2026 설 가이드북</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">현대백화점 2026 설 가이드북</div>
+          <div class="project-period">2025.12 – 2026.01</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        2026년 설 가이드북 UX/UI 적용, 검색 프로시저 유지보수 및 기능 개선.<br>
-        2025.12 – 2026.01 · 현대백화점
+        <ul class="exp-bullets">
+          <li>AWS S3 연동 이미지 업로드 경험</li>
+          <li>2026 설 가이드북 화면 UX/UI 개발</li>
+          <li>검색 프로시저 누락 항목 분석 및 수정으로 검색 정확도 개선</li>
+        </ul>
       </div>
       <div class="project-stack">
         <span class="stack-tag">React</span>
         <span class="stack-tag">MySQL</span>
+      </div>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">온라인농수산물 도매시장 표준화</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">온라인농수산물 도매시장 표준화</div>
+          <div class="project-period">2025.10 – 2026.02</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        표준화 대상 테이블 및 function, view 수정 및 적용.<br>
-        2025.10 – 2026.02 · 한국농수산식품유통공사
+        <ul class="exp-bullets">
+          <li>Database 표준화 (명명 규칙/도메인/공통 코드/ 테이블정의) 기준 수립 및 적용 지원</li>
+          <li>DB 표준 규칙 정리 및 가이드 문서화</li>
+          <li>기존 스키마/쿼리 영향도 점검 및 표준 반영 범위 조율</li>
+          <li>개발팀/운영팀과의 협업으로 표준 적용 이슈 개선</li>
+        </ul>
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Java</span>
         <span class="stack-tag">Tibero</span>
+        <span class="stack-tag">DB표준화</span>
+        <span class="stack-tag">문서화</span>
+        <span class="stack-tag">협업</span>
+      </div>
       </div>
     </div>
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">오모로랜드</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">오모로랜드</div>
+          <div class="project-period">2025.04 – 2025.09</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        미션·이벤트 개발 및 아바타 관련 유지보수 진행.<br>
-        2025.04 – 2025.09 · 실버서퍼
+        <ul class="exp-bullets">
+          <li>GMO 미디어 산하 일본 게임 포털 게소텐의 아바타 기반 커뮤니티 서비스</li>
+          <li>소셜 포인트 적립을 바탕으로 미니룸 추천 로직 변경 </li>
+          <li>Spring Batch를 사용하여 데일리 미션 초기화 기능 구현</li>
+          <li>피드, 댓글, 담벼락 신고 기능 및 답글 삭제 기능 구현</li>
+          <li>가챠 프로모션에 따라 조건별 포인트 소모 로직 개발</li>
+        </ul>
       </div>
       <div class="project-stack">
         <span class="stack-tag">React</span>
+        <span class="stack-tag">Spring Boot</span>
         <span class="stack-tag">MySQL</span>
+      </div>
       </div>
     </div>
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">세라젬 주문/렌탈 시스템</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">세라젬 주문/렌탈 시스템 (ERP)</div>
+          <div class="project-period">2024.05 – 2025.03</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        SAP API 연동, Vue 기반 실시간 데이터 시각화 및 웹뷰 환경 모바일 앱 프론트 개발.<br>
-        2024.05 – 2025.03 · 세라젬
+        <ul class="exp-bullets">
+          <li>JPA 기반 프로젝트 초기 세팅 및 개발 표준 적용하여 공지사항 등 개발</li>
+          <li>SAP API 연동을 위해 각 모듈 단위의 SAP 담당자와 소통</li>
+          <li>웹 물류·서비스 모듈 개발 담당</li>
+          <li>모바일 물류·서비스·주문 결제 메뉴 개발 담당</li>
+          <li>모바일 주문결제 시, NICE·하나신용 데이터 기반 렌탈/구매, 개인/법인 고객 유형별 주문 결제 로직 구현</li>
+          <li>웹뷰 환경에서 Android 네이티브 연동을 통한 카메라 촬영·서명 입력 및 Blob 파일 업로드 구현</li>
+        </ul>
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Java 1.8</span>
+        <span class="stack-tag">Java</span>
         <span class="stack-tag">Vue.js</span>
         <span class="stack-tag">Spring Boot</span>
         <span class="stack-tag">Spring JPA</span>
         <span class="stack-tag">Oracle</span>
+        <span class="stack-tag">협업</span>
+      </div>
       </div>
     </div>
-
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">Project Ailey</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">재정정보원 통합경영시스템</div>
+          <div class="project-period">2024.01 – 2024.05</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        버추얼 AI 셀러브리티 커뮤니티 앱 — 개인 프로필, 게시글 CRUD 구현 및 고객사 소통.<br>
-        2023.08 – 2023.12 · 마크업
+        <ul class="exp-bullets">
+          <li>결재 라인 일괄 문자 알림 발송 기능 개발</li>
+          <li>엑셀 업로드 기반 데이터 일괄 등록·삭제 기능 개발</li>
+        </ul>
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Java 11</span>
+        <span class="stack-tag">ASP.NET</span>
+        <span class="stack-tag">MS-SQL</span>
+      </div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div>
+          <div class="project-name">Project Ailey</div>
+          <div class="project-period">2023.08 – 2023.12</div>
+        </div>
+      </div>
+      <div class="project-right">
+      <div class="project-desc">
+        <ul class="exp-bullets">
+          <li>사내 공통화 정책 기반 프로젝트 초기 세팅 — Controller/Service 역할 분리 컨벤션 정의, 공통 JS 모듈(로그, 그리드, API 호출) 구성</li>
+          <li>사내 가상 머신에 MySQL 설치 및 DB 서버 환경 세팅</li>
+          <li>소셜 피드 기능 전담 개발 — 피드 목록/상세, 댓글·대댓글, 좋아요(인기순 정렬), 팔로우·팔로워, 블락 기능</li>
+          <li>이벤트 포인트 지급 설정 등 관리자 페이지 개발</li>
+          <li>추천 코드 입력을 통한 회원가입에 대한 로직 개발</li>
+          <li>퍼블리셔·고객사 직접 소통 및 기획 논의 주도</li>
+        </ul>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
         <span class="stack-tag">JSP</span>
         <span class="stack-tag">Spring Boot</span>
         <span class="stack-tag">PostgreSQL</span>
       </div>
+      </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">검색#뷰티</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">검색#뷰티</div>
+          <div class="project-period">2022.11 – 2023.07</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        뷰티 정보 플랫폼 — 로그인, 사용자 CRUD 및 모바일 메인 화면 구현.<br>
-        2022.11 – 2023.06 · 브랜딩퍼풀
+         <ul class="exp-bullets">
+          <li>웹뷰 형식의 성형 전문 리워드 앱 개발</li>
+          <li>Spring Security + OAuth 2.0 기반 카카오·네이버 소셜 로그인 구현, 마이페이지, 모바일 메인 페이지 개발</li>
+          <li>유저가 소지한 포인트를 사용한 결제 로직 구현, 포인트 이용 내역 관리</li>
+          <li>초대장 발송을 위한 네이버 메일 api 설정 - 버전 이슈로 로컬 톰캣 기동이 되지 않아 상위 버전 업그레이드 진행 </li>
+          <li>사내 Nexus 저장소 사용 경험</li>
+        </ul>
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Java 11</span>
+        <span class="stack-tag">Java</span>
         <span class="stack-tag">JSP</span>
         <span class="stack-tag">Spring Boot</span>
         <span class="stack-tag">PostgreSQL</span>
         <span class="stack-tag">Linux</span>
       </div>
+      </div>
     </div>
-
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">세라젬 콜센터 CRM</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">세라젬 콜센터 CRM</div>
+          <div class="project-period">2022.02 – 2022.10</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        세라젬 통합 CRM 구축 — 인바운드/아웃바운드 콜관리 메뉴 개발.<br>
-        2022.03 – 2022.10 · 세라젬
+        <ul class="exp-bullets">
+          <li>콜백 조회, 콜백 배분, 예약콜 등 콜백 관리 기능 개발</li>
+          <li>KMS(지식관리시스템) 메뉴 개발 — 지식 컨텐츠 카테고리 트리 구조, 파일 업로드, 에디터 적용 </li>
+          <li>단위 테스트 케이스 작성 및 테스트 수행</li>
+        </ul>
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Java 8</span>
+        <span class="stack-tag">Java</span>
         <span class="stack-tag">Vue.js</span>
         <span class="stack-tag">JSP</span>
         <span class="stack-tag">MySQL</span>
         <span class="stack-tag">Vuetify</span>
       </div>
+      </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">기획재정부 열린재정</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">열린재정 재정정보공개시스템</div>
+          <div class="project-period">2021.06 – 2021.12</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        열린재정 포털 통계 화면, SNS 로그인/공유 기능 개발 및 WebSquare 기반 유지보수.<br>
-        2021.06 – 2021.12 · 기재부
+       <ul class="exp-bullets">
+          <li>네이버, 카카오, 트위터, 페이스북의 소셜 로그인, 공유 기능 개발</li>
+          <li>국가채무 및 민간투자사업 통계 및 차트 시각화 화면 개발</li>
+          <li>재정교실 메뉴 개발 — 재정소개, 동영상·웹툰으로 배우는 재정 콘텐츠 화면 구현</li>
+        </ul>
       </div>
       <div class="project-stack">
         <span class="stack-tag">Java</span>
@@ -838,16 +961,24 @@
         <span class="stack-tag">WebSquare</span>
         <span class="stack-tag">Tibero</span>
       </div>
+      </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">이수시스템 인사관리</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">이수시스템 인사관리</div>
+          <div class="project-period">2020.05 – 2021.06</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        고객사별 요구사항 수정 및 추가개발 지원.<br>
-        2020.05 – 2021.06 · 이수시스템
+        <ul class="exp-bullets">
+          <li>고객사별 다른 운영환경에 맞춘 지원 경험 및 고객사 담당자와 직접 소통하며 요구사항 대응 경험</li>
+          <li>조직 및 조직원 관리, 근태관리 추가 개발</li>
+          <li>근로기준법 개정 및 사내 내규 변경에 따른 근태 계산 로직 수정 대응 </li>
+          <li>법령 변경에 따른 근로계약서 양식 업데이트 및 출력 기능 수정</li>
+        </ul>
       </div>
       <div class="project-stack">
         <span class="stack-tag">Java</span>
@@ -856,16 +987,24 @@
         <span class="stack-tag">IBsheet</span>
         <span class="stack-tag">Spring</span>
       </div>
+      </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-top">
-        <div class="project-name">맥도날드 인사관리 시스템</div>
-        <span class="project-arrow">↗</span>
+        <div>
+          <div class="project-name">맥도날드 인사관리 시스템</div>
+          <div class="project-period">2019.12 – 2020.04</div>
+        </div>
       </div>
+      <div class="project-right">
       <div class="project-desc">
-        근태/직영·가맹점 일마감·월마감, 개인별 근태·휴가관리, SQL 프로시저 작성 및 데이터 관리.<br>
-        2019.12 – 2020.04 · 한국맥도날드
+        <ul class="exp-bullets">
+          <li>직영·가맹점 일마감·월마감 프로세스 담당</li>
+          <li>개인별 근태 및 휴가관리 담당</li>
+          <li>24시간 운영 매장 포함 실시간 근태 데이터 처리 지원</li>
+          <li>SQL 프로시저 작성 및 데이터 관리</li>
+        </ul>
       </div>
       <div class="project-stack">
         <span class="stack-tag">Java</span>
@@ -873,6 +1012,7 @@
         <span class="stack-tag">JavaScript</span>
         <span class="stack-tag">MS-SQL</span>
         <span class="stack-tag">E-Gov</span>
+      </div>
       </div>
     </div>
   </div>
@@ -882,30 +1022,25 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="reveal">
-    <div class="contact-big">같이<br>만들어<br><em>볼까요?</em></div>
+  <div class="contact-copy reveal">
+    <div class="contact-copy-label">Contact</div>
+    <div class="contact-copy-text">
+      좋은 팀과 함께라면 더 나은 결과를 만들 수 있다고 믿습니다.<br>
+      새로운 기회에 <em>열려 있습니다.</em>
+    </div>
   </div>
   <div class="contact-links reveal">
     <a href="mailto:codingnine@gmail.com" class="contact-link">
-      <div>
-        <div class="contact-link-label">EMAIL</div>
-        codingnine@gmail.com
-      </div>
-      <span>→</span>
+      <div class="contact-link-label">EMAIL</div>
+      codingnine@gmail.com
     </a>
-    <a href="https://github.com/minjunkim" class="contact-link" target="_blank">
-      <div>
-        <div class="contact-link-label">GITHUB</div>
-        github.com/minjunkim
-      </div>
-      <span>→</span>
+    <a href="https://github.com/dy-goo" class="contact-link" target="_blank">
+      <div class="contact-link-label">GITHUB</div>
+      github.com/dy-goo
     </a>
-    <a href="https://velog.io/@minjunkim" class="contact-link" target="_blank">
-      <div>
-        <div class="contact-link-label">BLOG</div>
-        velog.io/@minjunkim
-      </div>
-      <span>→</span>
+    <a href="https://dy-goo.notion.site/Dev-Log-3509813cee2e8092928fc69901e6feca?source=copy_link" class="contact-link" target="_blank">
+      <div class="contact-link-label">NOTION</div>
+      dy-goo.notion.site/Dev-Log
     </a>
   </div>
 </section>
