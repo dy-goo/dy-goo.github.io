@@ -17,8 +17,9 @@
 layout: base
 ---
 
+{% comment %}
 {% assign strings = site.data.strings %}
-<!-- 
+
 <article class="page" role="article">
   <header>
     <h1 class="page-title">{{ page.title | default:strings.home | default:"Home" }}</h1>
@@ -53,4 +54,5 @@ layout: base
       {% endfor %}
     </ul>
   {% endif %}
-</article> -->
+</article> 
+{% endcomment %}
