@@ -54,32 +54,32 @@ menu:
   #  url:               /example/
   #- title:             Documentation
   #  url:               /docs/
-  - title:             Dev Note
-    url:               /dev/
-    submenu:
-      - title:         Git
-        url:           /git
-      - title:         Javascript
-        url:           /javascript
-      - title:         Java
-        url:           /java
-      - title:         DB
-        url:           /db
-  - title:             Study Note
-    url:               /study/
-    submenu:
-      - title:         Blog
-        url:           /blog
-      - title:         Algorithm
-        url:           /algorithm
-      - title:         Dev Tip
-        url:           /tip
-      - title:         Talking
-        url:           /talking
-  - title:             Tags
-    url:               /tags/      
-  - title:             About
-    url:               /about/
+  # - title:             Dev Note
+  #   url:               /dev/
+  #   submenu:
+  #     - title:         Git
+  #       url:           /git
+  #     - title:         Javascript
+  #       url:           /javascript
+  #     - title:         Java
+  #       url:           /java
+  #     - title:         DB
+  #       url:           /db
+  # - title:             Study Note
+  #   url:               /study/
+  #   submenu:
+  #     - title:         Blog
+  #       url:           /blog
+  #     - title:         Algorithm
+  #       url:           /algorithm
+  #     - title:         Dev Tip
+  #       url:           /tip
+  #     - title:         Talking
+  #       url:           /talking
+  # - title:             Tags
+  #   url:               /tags/      
+  # - title:             About
+  #   url:               /about/
   - title:             Resume
     url:               /resume/
 
